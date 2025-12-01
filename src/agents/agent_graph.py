@@ -1,15 +1,15 @@
 """LangGraph-based orchestration for the agentic research demo.
 
 This module introduces a LangGraph StateGraph that coordinates the existing
-SearchAgent and DatabaseAgent while preserving SPEC.md span naming:
+SearchAgent and DatabaseAgent with consistent span naming:
   - root_agent.handle_request
   - search_agent.run
   - db_agent.run
 The underlying service functions still emit spans: web_search_and_summarize,
 oracle.query_trends.
 
-We wrap the whole graph invocation in a root span so Jaeger shows a neat
-parent/child hierarchy for demo clarity.
+We wrap the whole graph invocation in a root span so traces show a clear
+parent/child hierarchy for observability.
 """
 
 from __future__ import annotations

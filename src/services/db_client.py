@@ -1,13 +1,10 @@
 """Oracle DB client supporting direct oracledb and optional SQLcl MCP path.
 
-Span name stays `oracle.query_trends` per SPEC.md. When the environment variable
+The span name is `oracle.query_trends`. When the environment variable
 `USE_SQLCL_MCP=true` is set and a `sql` executable is found, the client will attempt
 to run the query through SQLcl (as a lightweight stand‑in for a formal MCP server
 integration). Otherwise it falls back to the direct Python driver. This keeps the
 demo resilient while illustrating the optional path.
-
-TODO (MCP full): Replace subprocess invocation with a proper MCP server session
-once SQLcl MCP endpoint contract is finalized (see SPEC.md).
 """
 
 from __future__ import annotations

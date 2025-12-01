@@ -70,4 +70,3 @@ def init_http_instrumentation() -> None:
             # httpx instrumentation is optional; ignore if it fails.
             pass
     _http_instrumented = True
-    # TODO: Add config-driven enable/disable flags.

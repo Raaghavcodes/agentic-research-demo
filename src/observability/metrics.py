@@ -24,17 +24,18 @@ LLM_REQUEST_LATENCY = Histogram(
     "Latency for individual LLM calls",
 )
 
+TOTAL_COMPLETION_TOKENS = Counter(
+    "agentic_llm_completion_tokens_total",
+    "Total completion tokens produced across all LLM responses",
+)
+
 # LLM token tracking
 TOTAL_PROMPT_TOKENS = Counter(
     "agentic_llm_prompt_tokens_total",
     "Total prompt tokens used across all LLM calls",
 )
 
-TOTAL_COMPLETION_TOKENS = Counter(
-    "agentic_llm_completion_tokens_total",
-    "Total completion tokens produced across all LLM responses",
-)
-
+# Cost tracking
 TOTAL_COST_USD = Counter(
     "agentic_llm_cost_usd_total",
     "Total cost spent in USD for LLM usage",

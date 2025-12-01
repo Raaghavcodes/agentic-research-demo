@@ -18,7 +18,7 @@ class RootAgent:
         self._db_agent = db_agent
 
     def handle_request(self, user_query: str) -> str:
-        """Handle the incoming user query (not yet implemented)."""
+        """Handle the incoming user query by orchestrating SearchAgent and DatabaseAgent."""
         tracer = trace.get_tracer(__name__)
         with tracer.start_as_current_span("root_agent.handle_request") as span:
             span.set_attribute("user.query", user_query)
